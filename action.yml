@@ -16,6 +16,18 @@ inputs:
   started-by:
     description: "The value of the task started-by"
     required: false
+  subnet:
+    description: "The subnet the task is placed in"
+    required: true
+  security-group:
+    description: "The security group the task is using"
+    required: true
+  assign-public-ip:
+    description: "Whether to assign a public IP to the task"
+    required: false
+  launch-type:
+    description: "The launch type of the task"
+    required: false
   wait-for-finish:
     description: "Whether to wait for tasks to reach stopped state. Will default to not waiting"
     required: false
