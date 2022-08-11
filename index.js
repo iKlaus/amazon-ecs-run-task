@@ -91,6 +91,7 @@ async function run() {
     const taskDefinitionFile = core.getInput('task-definition', { required: true });
     const cluster = core.getInput('cluster', { required: false });
     const count = core.getInput('count', { required: true });
+    const overrides = core.getInput('overrides', { required: false })
     const startedBy = core.getInput('started-by', { required: false }) || agent;
     const subnet = core.getInput('subnet', { required: true });
     const securityGroup = core.getInput('security-group', { required: true });
@@ -128,6 +129,7 @@ async function run() {
       cluster: clusterName,
       taskDefinition: taskDefArn,
       count: count,
+      overrides: overrides,
       startedBy: startedBy,
       networkConfiguration: {
         awsvpcConfiguration: {
@@ -143,6 +145,7 @@ async function run() {
       cluster: clusterName,
       taskDefinition: taskDefArn,
       count: count,
+      overrides: overrides,
       startedBy: startedBy,
       networkConfiguration: {
         awsvpcConfiguration: {
